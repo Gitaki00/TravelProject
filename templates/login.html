@@ -1,0 +1,12 @@
+{% load static %}
+<body style="background-image:url({% static 'images/dino.jpg' %})">
+<form method="post",action="login">
+    {% csrf_token %}
+    <input type="text" , name="username" , placeholder="enter username"><br>
+    <input type="password" , name="password" , placeholder="enter password"><br>
+    <input type="submit">
+{% for msg in messages %}
+    {{msg}}
+{% endfor %}
+</form>
+</body>
